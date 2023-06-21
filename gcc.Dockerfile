@@ -1,0 +1,11 @@
+ARG TAG=9.5.0
+FROM gcc:$TAG
+
+ARG UID=1000
+ARG GID=1000
+ARG USER=chiru1221
+ARG GROUP=chiru1221
+RUN groupadd -g $GID $GROUP
+RUN useradd -g $GID -u $UID -m $USER
+
+USER $USER
